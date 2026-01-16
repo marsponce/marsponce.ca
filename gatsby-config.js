@@ -2,14 +2,32 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `marsponce.ca`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Mars Ponce`,
+    siteUrl: `https://www.marsponce.ca`,
+    menuLinks:[
+      {
+        name: `home`,
+        link: `/`
+      },
+      {
+        name: `projects`,
+        link: `/projects`,
+      },
+      {
+        name: `resume`,
+        link: `/resume`
+      },
+      {
+        name: `contact`,
+        link: `/contact`
+      }
+    ]
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
